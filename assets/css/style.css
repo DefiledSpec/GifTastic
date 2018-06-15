@@ -1,0 +1,11 @@
+img {
+    display: block;
+    margin: 1em auto;
+}
+
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
