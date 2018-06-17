@@ -1,14 +1,60 @@
-img {
-    display: block;
-    margin: 1em auto 1em 0;
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+    font-family: 'Raleway', Arial, sans-serif;
 }
+
+
+#wrapper {
+    margin: 1em auto;
+    max-width: 680px;
+    border-radius: 3px;
+    border: black solid 1px;
+    
+}
+
+
 button {
-    margin: .2em .2em;
+    margin: .5em .25em;
+}
+.card {
+    float: left;
+    margin-left: 2em;
+    margin-right: 2em;
+    max-width: 40%;
+    width: max-content;
+}
+.card:nth-of-type(even) {
+    float: right;
+}
+.btnContainer {
+    border: rgba(0,0,0,0.1) solid 1px;
+    margin: 1em 1em 1em 1em;
+    width: 42%;
+    max-width: 42%;
+    padding: 1.5em;
+}
+.buttonGroup {
+    float: left;
+}
+.btnContainer:last-of-type {
+    float: right;
+}
+form {
+    max-width: 50%;
+    margin: 1em auto;
+}
+.resetBtn {
+    float: right;
+}
+footer {
+    font-size: .6em;
 }
 
-
-.clearfix::after {
-    content: '';
-    display: block;
-    clear: both;
+@media only screen and (max-width: 680px) {
+    .card, .card:nth-of-type(even) {
+        margin: 1em auto;
+        float: none;
+        clear: both;
+    }
 }

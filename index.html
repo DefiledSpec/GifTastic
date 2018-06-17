@@ -6,27 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
     <script src="assets/js/app.js" type="text/javascript" defer></script>
-    <title>Giphy API</title>
+    <title>GifTastic</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-    <h1>Giphy API</h1>
-    
-        <input type="text" name="addButtonText" id="addBtnText" placeholder="Add Your Own Buttons!" required>
-        <button type="submit" id="addBtn" >Add Button</button>
-    
-
-    <div class="btnGroup">
-        <button class="gifBtn" data-content="Paul Rudd">Paul Rudd</button>
-        <button class="gifBtn" data-content="Donald Trump">Donald Trump</button>
-        <button class="gifBtn" data-content="Chris Pratt">Chris Pratt</button>
-        <button class="gifBtn" data-content="Nick Offerman">Nick Offerman</button>
-        <button class="gifBtn" data-content="Tina Fey">Tina Fey</button>
-        <button class="gifBtn" data-content="Tracy Morgan">Tracy Morgan</button>
-        <button class="gifBtn" data-content="John Krasinski">John Krasinski</button>
-        <button class="gifBtn" data-content="Will Ferrell">Will Ferrell</button>
+<body class="bg-dark">
+    <div id="wrapper" class="bg-light">
+        <h1 class="text-center text-primary mt-2">GifTastic</h1>
+        <hr>
+        <br>
+        <form class="form-control bg-light">
+            <label for="addBtnText">Add Your Own GIPHY Queries!</label>
+                <input type="text" class="form-control" name="addButtonText" id="addBtnText" placeholder="Tina Fey" required>
+            
+            <button type="submit" id="addBtn" class="btn btn-primary">Add Button</button>
+            <button type="reset" class="resetBtn btn btn-info">Reset Saved</button>
+            <div class="clearfix"></div>
+        </form>
+        <br>
+        <div class="container">
+            <div class="btnContainer buttonGroup"><h4 class="text-success">Try These Buttons!</h4><div class="btnGroup"></div></div>
+            <div class="btnContainer "><h4 class="text-success">Add Your Own!</h4><div class="usersButtons"></div></div>
+        </div>
+        <div class="clearfix"></div>
+        <h2 class="text-center text-info" >Gifs Show Up Here!</h2>
+        <div class="gifContainer container-fluid">
+            
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+        <footer class="container-fluid">
+            <p class="text-center "><span class="text-center text-muted">&copy; Copyright 2018</span></p>
+        </footer>
     </div>
-
-    <div class="gifContainer"></div>
 </body>
 </html>
