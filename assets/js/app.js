@@ -88,6 +88,8 @@ $(document).on('click', '.gifImg', function() {
 
 });
 $('.resetBtn').click(function () {
+    usersButtons = [];
+    console.log(usersButtons)
     localStorage.clear();
     displayButtons();
 });
