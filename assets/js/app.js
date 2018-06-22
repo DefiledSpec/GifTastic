@@ -10,6 +10,7 @@ const btns = [
     'Donald Trump',
     'Chris Pratt',
     'Nick Offerman',
+    'Zach Galifianakis',
 ];
 let usersButtons = [];
 if(localStorage.length < 1) {
