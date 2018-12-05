@@ -14,7 +14,8 @@ const btns = [
 	'Tina Fey',
     'Tracy Morgan',
     'John Krasinski',
-    'Will Ferrell'
+    'Will Ferrell',
+    'Zach Galifianakis',
 ];
 let usersButtons = [];
 if(localStorage.length < 1) {
@@ -104,4 +105,3 @@ $('#addBtnText').on('focus', function() {
 $('#addBtnText').on('blur', function() {
     $(this).attr('placeholder', 'Tina Fey');
 });
-
