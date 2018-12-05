@@ -5,11 +5,16 @@ const gifContainer = $('.gifContainer');
 const btnContainer = $('.btnGroup');
 const usersBtnContainer = $('.usersButtons');
 let startTime;
+
 const btns = [
     'Paul Rudd',
     'Donald Trump',
     'Chris Pratt',
-    'Nick Offerman',
+	'Nick Offerman',
+	'Tina Fey',
+    'Tracy Morgan',
+    'John Krasinski',
+    'Will Ferrell'
 ];
 let usersButtons = [];
 if(localStorage.length < 1) {
@@ -99,11 +104,4 @@ $('#addBtnText').on('focus', function() {
 $('#addBtnText').on('blur', function() {
     $(this).attr('placeholder', 'Tina Fey');
 });
-/**
- * Additional Stock Buttons
-    // 'Tina Fey',
-    // 'Tracy Morgan',
-    // 'John Krasinski',
-    // 'Will Ferrell'
- */
 
