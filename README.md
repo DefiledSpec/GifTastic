@@ -12,5 +12,4 @@ Buttons you add are added to ```localStorage``` and persist on refresh, you can 
 
 *To keep things family friendly for all ages the app only returns gifs with a rating of '**G**' and '**PG**'.*
 
-
-## ENJOY!
+## ENJOY
