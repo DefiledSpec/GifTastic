@@ -10,12 +10,12 @@ const btns = [
     'Paul Rudd',
     'Donald Trump',
     'Chris Pratt',
-	'Nick Offerman',
-	'Tina Fey',
-    'Tracy Morgan',
-    'John Krasinski',
-    'Will Ferrell',
-    'Zach Galifianakis',
+	// 'Nick Offerman',
+	// 'Tina Fey',
+    // 'Tracy Morgan',
+    // 'John Krasinski',
+    // 'Will Ferrell',
+    // 'Zach Galifianakis',
 ];
 let usersButtons = [];
 if(localStorage.length < 1) {
