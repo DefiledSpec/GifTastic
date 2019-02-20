@@ -4,7 +4,11 @@ const search = '/v1/gifs/search?';
 const gifContainer = $('.gifContainer');
 const btnContainer = $('.btnGroup');
 const usersBtnContainer = $('.usersButtons');
+const $resultsTotal = $('#resultsTotal');
+const $copyright = $('#copyright');
+
 let startTime;
+
 const btns = [
     'Paul Rudd',
     'Donald Trump',
@@ -34,7 +38,7 @@ displayButtons();
 
 function getGifs() {
     startTime = Date.now();
-    let Q = $(this).attr('data-content') || 'paul_rudd';
+    let Q = $(this).attr('data-content') || 'Tina Fey';
     console.log(`Fetching "${Q}" from GIPHY`);
     
     let query = Q.replace(' ', '_');
@@ -42,20 +46,20 @@ function getGifs() {
     let url = host + search;
     url += $.param({
         q: query,
-        limit: 10,
+        limit: 50,
         api_key: APIKey,
     });
   
     $.ajax({url: url, method: 'GET'})
         .then(res => {
             if(res.data.length === 0) { throw new Error(`No gifs found for query: "${Q}"`) };
-            console.log(`Request "${Q}" to GIPHY took ${((Date.now() - startTime)/1000).toFixed(2)} seconds to complete. Response:`, res.data)
-            displayGifs(res.data);
+            console.log(`Request "${Q}" to GIPHY took ${((Date.now() - startTime)/1000).toFixed(2)} seconds to return ${res.data.length} results. Response:`, res.data)
+            displayGifs(res.data, startTime);
         })
         .catch(err => console.log(`${err}`));
 }
 
-function displayGifs(gifs) {
+function displayGifs(gifs, startTime) {
     gifContainer.empty();
     gifs.forEach(gif => {      
         if(gif.rating === 'g' || gif.rating === 'pg') {
@@ -70,7 +74,13 @@ function displayGifs(gifs) {
             gifContainer.append(card.append([card, gifImg, rating, link]))
         }
     });
+    console.log(`Request took ${((Date.now() - startTime)/1000).toFixed(2)} seconds to display ${gifs.length} results.`)
+    $resultsTotal.text(`${gifs.length}`)
 }
+(function () {
+    getGifs();
+    $copyright.html(`&copy; Copyright 2018 - ${(new Date()).getFullYear()}`)
+})();
 $('#addBtn').click(function(e) {
     e.preventDefault();
     let btnContent = $('#addBtnText').val();
