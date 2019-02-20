@@ -1,0 +1,24 @@
+{
+  "name": "Giphy",
+  "version": "1.0.0",
+  "description": "Check out my implementation of [GifTastic](https://defiledspec.github.io/GifTastic) using the GIPHY API!",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^6.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DefiledSpec/Giphy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DefiledSpec/Giphy/issues"
+  },
+  "homepage": "https://github.com/DefiledSpec/Giphy#readme"
+}
