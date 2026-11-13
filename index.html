@@ -4,48 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GifTastic</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
     <script src="assets/js/app.js" type="text/javascript" defer></script>
-    <title>GifTastic</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body id="top" class="bg-dark">
-    <div id="wrapper" class="bg-light">
-        <h1 class="text-center text-primary mt-2 heading">GifTastic</h1>
-        <hr>
-        <br>
-        <form class="form-control bg-light">
-            <label for="addBtnText">Add Your Own GifTastic Buttons!</label>
-                <input type="text" class="form-control" name="addButtonText" id="addBtnText" placeholder="Tina Fey" required>
-            
-            <button type="submit" id="addBtn" class="btn btn-primary">Add Button</button>
-            <button type="reset" class="resetBtn btn btn-danger">Reset Saved</button>
-            <div class="clearfix"></div>
+<body id="top">
+    <div id="wrapper">
+        <header class="app-header">
+            <h1 class="heading">GifTastic</h1>
+            <p class="subtitle">Click any topic to load GIFs. Click a thumbnail to play or pause.</p>
+        </header>
+
+        <form id="add-topic-form">
+            <label for="addBtnText" class="sr-only">Add Your Own GifTastic Buttons!</label>
+            <input type="text" name="addButtonText" id="addBtnText" placeholder="Search or add a topic (e.g. Tina Fey)..." required>
+            <button type="submit" id="addBtn">Add Button</button>
+            <button type="button" class="resetBtn">Reset Saved</button>
         </form>
-        <br>
-        <div class="container">
-            <div class="btnContainer buttonGroup">
-                <h4 class="text-success">Try These Buttons!</h4>
+
+        <section class="controls-grid">
+            <div class="btnContainer">
+                <h4>Try These Buttons!</h4>
                 <div class="btnGroup"></div>
             </div>
-            <div class="btnContainer ">
-                <h4 class="text-success">Add Your Own!</h4>
+            <div class="btnContainer">
+                <h4>Your Saved Buttons</h4>
                 <div class="usersButtons"></div>
             </div>
-        </div>
-        <div class="clearfix"></div>
-        <h2 class="text-center text-info" >Gifs Show Up Here!</h2>
-        <hr>
-        <div class="gifContainer container-fluid"></div>
-        <div class="clearfix"></div>
-        <p id='total-results'>Total Results: <span id="resultsTotal">0</span></p>
-        <hr>
-        <footer class="container-fluid">
-            <p id="page-top" class="text-center">
-                <a href="#top">Back To Top</a>
-            </p>
-            <p class="text-center "><span id="copyright" class="text-center text-muted">&copy; Copyright 2018</span></p>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery-toolbar">
+                <div class="toolbar-left">
+                    <h2 id="active-topic-title">Showing: <span>Tina Fey</span></h2>
+                    <span id="total-results">(<span id="resultsTotal">0</span> GIFs)</span>
+                </div>
+                <div class="toolbar-right">
+                    <select id="ratingFilter" aria-label="Filter by rating">
+                        <option value="all">All Ratings (G & PG)</option>
+                        <option value="g">Rated G Only</option>
+                        <option value="pg">Rated PG Only</option>
+                    </select>
+                    <button type="button" id="toggleAllBtn" class="secondary-action-btn">Play All</button>
+                </div>
+            </div>
+
+            <div class="gifContainer"></div>
+        </section>
+
+        <footer>
+            <a id="page-top" href="#top">↑ Back To Top</a>
+            <span id="copyright">&copy; Copyright 2018</span>
         </footer>
     </div>
 </body>
